@@ -201,6 +201,12 @@ extern "C" {
 #define RETRO_DEVICE_ID_JOYPAD_R2      13
 #define RETRO_DEVICE_ID_JOYPAD_L3      14
 #define RETRO_DEVICE_ID_JOYPAD_R3      15
+#define RETRO_DEVICE_ID_JOYPAD_6A      16
+#define RETRO_DEVICE_ID_JOYPAD_6B      17
+#define RETRO_DEVICE_ID_JOYPAD_6C      18
+#define RETRO_DEVICE_ID_JOYPAD_6X      19
+#define RETRO_DEVICE_ID_JOYPAD_6Y      20
+#define RETRO_DEVICE_ID_JOYPAD_6Z      21
 
 #define RETRO_DEVICE_ID_JOYPAD_MASK    256
 
@@ -3787,7 +3793,7 @@ typedef void (RETRO_CALLCONV *retro_input_poll_t)(void);
  * have been set with retro_set_controller_port_device()
  * will still use the higher level RETRO_DEVICE_JOYPAD to request input.
  */
-typedef int16_t (RETRO_CALLCONV *retro_input_state_t)(unsigned port, unsigned device,
+typedef int32_t (RETRO_CALLCONV *retro_input_state_t)(unsigned port, unsigned device,
       unsigned index, unsigned id);
 
 /* Sets callbacks. retro_set_environment() is guaranteed to be called
